@@ -236,4 +236,19 @@ function declararVencedor(vencedor){
     messageText.innerHTML = msg;
 
     messageContainer.classList.remove("hide");
+
+    setTimeout( function(){
+        messageContainer.classList.add("hide");
+    }, 3000);
+
+    player1 = 0;
+    player2 = 0;
+
+    // limpar o jogo
+
+    let boxesParaRemover = document.querySelectorAll(".box div");
+    
+    for (let i = 0; i < boxesParaRemover.length; i++) {
+      boxesParaRemover[i].parentNode.removeChild(boxesParaRemover[i]);
+    }
 }
