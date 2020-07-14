@@ -1,22 +1,22 @@
+
+let _boxes = document.querySelectorAll(".box");
 let x = document.querySelector(".x");
 let o = document.querySelector(".o");
-let boxes = document.querySelectorAll(".box");
 let buttons = document.querySelectorAll("#buttons-container button");
 let messageContainer = document.querySelector("#message");
 let messageText = document.querySelector("#message p");
 let secondPlayer;
 
-console.log(boxes);
 // contador
 
 let player1 = 0;
 let player2 = 0;
 
 // adicionando o click aos boxes
-for (let i = 0; i < boxes.length; i++) {
+for (let i = 0; i < _boxes.length; i++) {
     
     // quando alguem clicka na caixa
-    boxes[i].addEventListener("click", function(){
+    _boxes[i].addEventListener("click", function(){
 
         let el;
 
