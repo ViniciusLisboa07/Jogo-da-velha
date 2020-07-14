@@ -209,7 +209,7 @@ function checkEl(player1, player2){
     }
 
     if(contador == 9){
-        console.log("Deu velha");
+        declararVencedor("Deu velha!");
     }
 }
 
@@ -222,10 +222,10 @@ function declararVencedor(vencedor){
 
     let msg = '';
 
-    if(winner == 'x'){
+    if(vencedor == 'x'){
         scoreboardX.textContent = parseInt(scoreboardX.textContent) + 1;
         msg = "O jogador 1 venceu :)"
-    } else if(winner == 'o'){
+    } else if(vencedor == 'o'){
         scoreboardO.textContent = parseInt(scoreboardO.textContent) + 1;
         msg = "O jogador 2 venceu :)"
     } else{
@@ -233,6 +233,7 @@ function declararVencedor(vencedor){
     }
 
     // exibe msg
-    messageText = msg;
+    messageText.innerHTML = msg;
+
     messageContainer.classList.remove("hide");
 }
