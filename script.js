@@ -31,6 +31,15 @@ for (let i = 0; i < _boxes.length; i++) {
             // marcando as jogadas
             if(player1 == player2){
                 player1++;
+
+                if(secondPlayer == 'ai-player'){
+
+                    // função executar a jogada
+                    computadorJoga();
+
+                    player2++
+                }
+
             } else {
                 player2++;
             }
@@ -40,6 +49,26 @@ for (let i = 0; i < _boxes.length; i++) {
     });
     
 }
+
+// verifica se são 2 players ou IA
+
+for(let i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener("click", function(){
+
+        secondPlayer = this.getAttribute("id");
+
+        for(let j = 0; j < buttons.length; j++){
+            buttons[j].style.display = "none";
+        }
+
+        setTimeout(function(){
+            let container = document.querySelector("#container");
+            container.classList.remove("hide");
+        })
+    })
+}
+
+
 
 // verifica quem vai jogar
 function checkEl(player1, player2){
@@ -250,5 +279,35 @@ function declararVencedor(vencedor){
     
     for (let i = 0; i < boxesParaRemover.length; i++) {
       boxesParaRemover[i].parentNode.removeChild(boxesParaRemover[i]);
+    }
+}
+
+// lógica da IA
+
+function computadorJoga(){
+
+    let cloneO = o.cloneNode(true);
+
+    cont = 0;
+    filled = 0;
+
+    for(let i = 0; i < _boxes.length; i++){
+
+        let randomNumber = Math.floor(Math.random() * 5);
+        
+        // só preencher se o filho estiver vazio
+        if(_boxes[i].childNodes[0] == undefined){
+            if(randomNumber <= 1){
+                _boxes[i].appendChild(cloneO);
+                cont++;
+                break;
+            } 
+        } else{
+            filled++;
+        }
+    }
+
+    if(cont == 0 && filled < 9){
+        computadorJoga();
     }
 }
