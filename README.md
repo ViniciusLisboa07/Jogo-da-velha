@@ -17,3 +17,8 @@ Ao iniciar, são apresentadas na tela do usuário duas opções de jogabilidade,
 ![print](https://github.com/ViniciusLisboa07/Jogo-da-velha/blob/master/Pasta%20imagens/Screenshot_5.png)
 
 ![print](https://github.com/ViniciusLisboa07/Jogo-da-velha/blob/master/Pasta%20imagens/Screenshot_6.png)
+
+## :last_quarter_moon: Link para clonagem do repositório
+```https://github.com/ViniciusLisboa07/Jogo-da-velha.git ```
+
+## :octocat: Não se esqueça da :star2:, muito obrigado por ler até aqui :wave:
